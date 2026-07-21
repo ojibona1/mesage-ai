@@ -18,5 +18,9 @@ frontend/      # Next.js dashboard
   public/
 ```
 
+## Production
+
+**Frontend:** [mesageai.devblocktechnologies.com](https://mesageai.devblocktechnologies.com)
+
 ## Stack
 Hono, Baileys, TypeScript, SQLite, Next.js, Tailwind, Sage Inference
