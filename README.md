@@ -184,4 +184,4 @@ npm run pages:deploy
 
 ## 📄 License
 
-Proprietary Software — Developed by **DevBlock Technologies Limited**. All rights reserved.
+Proprietary Software — Developed by **DevBlock Technology Limited**. All rights reserved.
