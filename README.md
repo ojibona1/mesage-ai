@@ -13,7 +13,7 @@
   </a>
   <img src="https://img.shields.io/badge/Node.js-22%2B-green" alt="Node.js version" />
   <img src="https://img.shields.io/badge/Next.js-15-black" alt="Next.js version" />
-  <img src="https://img.shields.io/badge/License-Private%20%2F%20DevBlock%Technology%Limited-red" alt="License" />
+  <img src="https://img.shields.io/badge/License-Private%20%2F%20DevBlock%20Technology%20Limited-red" alt="License" />
 </p>
 
 ---
