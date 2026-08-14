@@ -1,5 +1,8 @@
-# 🤖 MesageAI
-### Multi-Channel Autonomous AI Messaging Platform for Businesses
+<p align="center">
+  <img src="https://mesageai.devblocktechnologies.com/mesageai-logo.png" alt="MesageAI Logo" width="250" />
+</p>
+
+<h3 align="center">Multi-Channel Autonomous AI Messaging Platform for Businesses</h3>
 
 <p align="center">
   <a href="https://mesage-api.devblocktechnologies.com/health">
@@ -29,28 +32,28 @@ The backend scales horizontally across multiple CPU cores using PM2 clustering, 
 
 ```mermaid
 graph TD
-    User([User on WhatsApp/Telegram/Slack/Discord/Voice]) -->|Message| API[Hono API Gateway]
-    API -->|Route Webhook| Shard{PM2 Shard Router}
-    Shard -->|Cryptographic Hash| Worker[Worker Process]
-    Worker -->|Check lock| Lock{Concurrency Lock?}
-    Lock -->|Active| Ignore[Ignore / Queue Request]
-    Lock -->|Inactive| Acquire[Acquire Lock & Start Pipeline]
+    User(["User (WhatsApp/Telegram/Slack/Discord/Voice)"]) -->|Message| API[Hono API Gateway]
+    API -->|Route Webhook| Shard{"PM2 Shard Router"}
+    Shard -->|Cryptographic Hash| Worker["Worker Process"]
+    Worker -->|Check lock| Lock{"Concurrency Lock?"}
+    Lock -->|Active| Ignore["Ignore / Queue Request"]
+    Lock -->|Inactive| Acquire["Acquire Lock & Start Pipeline"]
     
-    Acquire --> RAG[RAG & Grounding Engine]
-    RAG -->|Exact Search| FTS5[(SQLite FTS5 Docs)]
-    RAG -->|Semantic Search| Vectorize[(Cloudflare Vectorize)]
+    Acquire --> RAG["RAG & Grounding Engine"]
+    RAG -->|Exact Search| FTS5[("SQLite FTS5 Docs")]
+    RAG -->|Semantic Search| Vectorize[("Cloudflare Vectorize")]
     
-    FTS5 & Vectorize --> Context[Dynamic Context Injection]
-    Context --> LLM[Sage LLM Inference]
+    FTS5 & Vectorize --> Context["Dynamic Context Injection"]
+    Context --> LLM["Sage LLM Inference"]
     
-    LLM -->|Check Tool Query| Tool{Query marker `[QUERY:]`?}
-    Tool -->|Yes| DB[Execute SQL against Business DB]
+    LLM -->|Check Tool Query| Tool{"Query marker [QUERY:]?"}
+    Tool -->|Yes| DB["Execute SQL against Business DB"]
     DB --> LLM
-    Tool -->|No| Respond[Generate Clean Reply]
+    Tool -->|No| Respond["Generate Clean Reply"]
     
-    Respond --> Send[Channel Adapter]
+    Respond --> Send["Channel Adapter"]
     Send -->|Send Message| User
-    Send --> Release[Release Concurrency Lock]
+    Send --> Release["Release Concurrency Lock"]
 ```
 
 ### Directory Structure
